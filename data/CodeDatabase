@@ -42,13 +42,13 @@ CREATE TABLE `gameaccount` (
 );
 
 ALTER TABLE `customers`
-  ADD CONSTRAINT `customers_ibfk_1` FOREIGN KEY (`taikhoan`) REFERENCES `gameaccount` (`taikhoan`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `customers_ibfk_2` FOREIGN KEY (`SoMay`) REFERENCES `donhang` (`SoMay`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `customers_ibfk_1` KEY (`taikhoan`) REFERENCES `gameaccount` (`taikhoan`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `customers_ibfk_2` KEY (`SoMay`) REFERENCES `donhang` (`SoMay`) ON UPDATE CASCADE;
 
 ALTER TABLE `donhang`
   ADD CONSTRAINT `donhang_ibfk_1` FOREIGN KEY (`id_sp`) REFERENCES `fooddrink` (`id_sp`) ON UPDATE CASCADE;
 
 ALTER TABLE `gameaccount`
-  ADD CONSTRAINT `gameaccount_ibfk_1` FOREIGN KEY (`matkhau`) REFERENCES `customers` (`matkhau`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `gameaccount_ibfk_1` KEY (`matkhau`) REFERENCES `customers` (`matkhau`) ON UPDATE CASCADE,
   ADD CONSTRAINT `gameaccount_ibfk_2` FOREIGN KEY (`id_game`) REFERENCES `game` (`id_game`) ON UPDATE CASCADE;
 COMMIT;
