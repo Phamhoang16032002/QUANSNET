@@ -1,44 +1,44 @@
 CREATE DATABASE quanliquannet;
 
 CREATE TABLE `customers` (
-  `id_nguoi` int(8) NOT NULL PRIMARY KEY,
-  `taikhoan` varchar(20) NOT NULL KEY,
-  `matkhau` varchar(32) NOT NULL KEY,
-  `SoDu` int(10) NOT NULL,
-  `SoMay` int(2) NOT NULL KEY
+  `id_player` int(8) NOT NULL PRIMARY KEY,
+  `account_player` varchar(20) NOT NULL KEY,
+  `password_player` varchar(32) NOT NULL KEY,
+  `currentBalance` int(10) NOT NULL,
+  `computerNumber` int(2) NOT NULL KEY
 );
 
-CREATE TABLE `donhang` (
-  `id_don` int(8) NOT NULL PRIMARY KEY,
-  `id_sp` int(8) NOT NULL KEY,
-  `id_nguoi` int(8) NOT NULL KEY,
-  `tg_dat` datetime NOT NULL,
-  `ten_sp` varchar(1000) NOT NULL KEY,
-  `gia` int(7) NOT NULL,
-  `SoMay` int(2) NOT NULL KEY
+CREATE TABLE `orders` (
+  `id_order` int(8) NOT NULL PRIMARY KEY,
+  `id_product` int(8) NOT NULL KEY,
+  `id_player` int(8) NOT NULL KEY,
+  `orderTime` datetime NOT NULL,
+  `productName` varchar(1000) NOT NULL KEY,
+  `price` int(7) NOT NULL,
+  `computerNumber` int(2) NOT NULL KEY
 );
 
 CREATE TABLE `fooddrink` (
-  `id_sp` int(8) NOT NULL PRIMARY KEY,
-  `ten_sp` varchar(1000) NOT NULL KEY,
-  `gia` int(7) NOT NULL,
-  `hinhanh` varchar(255) NOT NULL
+  `id_product` int(8) NOT NULL PRIMARY KEY,
+  `name` varchar(1000) NOT NULL KEY,
+  `price` int(7) NOT NULL,
+  `image` varchar(255) NOT NULL
 );
 
 CREATE TABLE `game` (
-  `id_game` int(8) NOT NULL PRIMARY KEY,
-  `ten_game` varchar(1000) NOT NULL,
-  `thongtin_game` varchar(10000) NOT NULL,
+  `id_product` int(8) NOT NULL PRIMARY KEY,
+  `gameName` varchar(1000) NOT NULL,
+  `gameInfo` varchar(10000) NOT NULL,
   `image_game` varchar(255) NOT NULL
 );
 
 CREATE TABLE `gameaccount` (
-  `id_nguoi` int(8) NOT NULL PRIMARY KEY,
-  `taikhoan` varchar(20) NOT NULL KEY,
-  `matkhau` varchar(32) NOT NULL KEY,
-  `avatar` varchar(255) DEFAULT NULL,
-  `gia` int(7) NOT NULL,
-  `id_game` int(8) NOT NULL KEY
+  `id_account` int(8) NOT NULL PRIMARY KEY,
+  `id_product` varchar(20) NOT NULL KEY,
+  `gameaccount_username` varchar(32) NOT NULL KEY,
+  `gameaccount_password` varchar(255) DEFAULT NULL,
+  `avatar` int(7) NOT NULL,
+  `price` int(8) NOT NULL KEY
 );
 
 ALTER TABLE `customers`
