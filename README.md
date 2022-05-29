@@ -5,4 +5,5 @@ Những người thực hiện:
 - Phạm Huy Hoàng (20020053) - K65CB
 - Lê Xuân Dương (20020099) - K65CB
 - Cao Hải Đăng (20020392) - K65CB
+
 GV hướng dẫn: TS. Lê Hồng Hải - Khoa CNTT, Đại học Công nghệ - ĐHQGHN
